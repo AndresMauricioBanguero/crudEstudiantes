@@ -2,96 +2,138 @@ package com.api.crud.models;
 
 import jakarta.persistence.*;
 
+/**
+ * Clase que representa la entidad "Docente" en la base de datos.
+ */
 @Entity
 @Table(name = "docente")
 public class Docente {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-	@Column(nullable = false, unique = true)
-	private String nombres;
+    @Column(nullable = false, unique = true)
+    private String nombres;
 
-	private String apellidos;
-	private String tipoDoc;
-	private String numeroDoc;
-	private String especialidad;
-	private String gradoAcademico;
-	private String correoElectronico;
+    private String apellidos;
+    private String tipoDoc;
+    private String numeroDoc;
+    private String especialidad;
+    private String gradoAcademico;
+    private String correoElectronico;
 
-	public Long getId() {
-		return id;
-	}
+    /**
+     * Constructor sin argumentos requerido por JPA.
+     */
+    public Docente() {
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    /**
+     * Constructor utilizado para crear una instancia de Docente con todos los atributos.
+     *
+     * @param id               El identificador único del docente.
+     * @param nombres          Los nombres del docente.
+     * @param apellidos        Los apellidos del docente.
+     * @param tipoDoc          El tipo de documento del docente.
+     * @param numeroDoc        El número de documento del docente.
+     * @param especialidad     La especialidad del docente.
+     * @param gradoAcademico   El grado académico del docente.
+     * @param correoElectronico El correo electrónico del docente.
+     */
+    public Docente(Long id, String nombres, String apellidos, String tipoDoc, String numeroDoc, String especialidad, String gradoAcademico, String correoElectronico) {
+        this.id = id;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.tipoDoc = tipoDoc;
+        this.numeroDoc = numeroDoc;
+        this.especialidad = especialidad;
+        this.gradoAcademico = gradoAcademico;
+        this.correoElectronico = correoElectronico;
+    }
 
-	public String getNombres() {
-		return nombres;
-	}
+    // Métodos getters y setters (accesores y mutadores) para cada atributo:
 
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getApellidos() {
-		return apellidos;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
-	}
+    public String getNombres() {
+        return nombres;
+    }
 
-	public String getTipoDoc() {
-		return tipoDoc;
-	}
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
 
-	public void setTipoDoc(String tipoDoc) {
-		this.tipoDoc = tipoDoc;
-	}
+    public String getApellidos() {
+        return apellidos;
+    }
 
-	public String getNumeroDoc() {
-		return numeroDoc;
-	}
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
 
-	public void setNumeroDoc(String numeroDoc) {
-		this.numeroDoc = numeroDoc;
-	}
+    public String getTipoDoc() {
+        return tipoDoc;
+    }
 
-	public String getEspecialidad() {
-		return especialidad;
-	}
+    public void setTipoDoc(String tipoDoc) {
+        this.tipoDoc = tipoDoc;
+    }
 
-	public void setEspecialidad(String especialidad) {
-		this.especialidad = especialidad;
-	}
+    public String getNumeroDoc() {
+        return numeroDoc;
+    }
 
-	public String getGradoAcademico() {
-		return gradoAcademico;
-	}
+    public void setNumeroDoc(String numeroDoc) {
+        this.numeroDoc = numeroDoc;
+    }
 
-	public void setGradoAcademico(String gradoAcademico) {
-		this.gradoAcademico = gradoAcademico;
-	}
+    public String getEspecialidad() {
+        return especialidad;
+    }
 
-	public String getCorreoElectronico() {
-		return correoElectronico;
-	}
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
+    }
 
-	public void setCorreoElectronico(String correoElectronico) {
-		this.correoElectronico = correoElectronico;
-	}
+    public String getGradoAcademico() {
+        return gradoAcademico;
+    }
 
-	public Docente(Long id, String nombres, String apellidos, String tipoDoc, String numeroDoc, String especialidad, String gradoAcademico, String correoElectronico) {
-		this.id = id;
-		this.nombres = nombres;
-		this.apellidos = apellidos;
-		this.tipoDoc = tipoDoc;
-		this.numeroDoc = numeroDoc;
-		this.especialidad = especialidad;
-		this.gradoAcademico = gradoAcademico;
-		this.correoElectronico = correoElectronico;
-	}
+    public void setGradoAcademico(String gradoAcademico) {
+        this.gradoAcademico = gradoAcademico;
+    }
+
+    public String getCorreoElectronico() {
+        return correoElectronico;
+    }
+
+    public void setCorreoElectronico(String correoElectronico) {
+        this.correoElectronico = correoElectronico;
+    }
+
+    /**
+     * Método toString para representar la información del docente como una cadena de texto.
+     *
+     * @return Representación en cadena de texto del objeto Docente.
+     */
+    @Override
+    public String toString() {
+        return "Docente{" +
+                "id=" + id +
+                ", nombres='" + nombres + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", tipoDoc='" + tipoDoc + '\'' +
+                ", numeroDoc='" + numeroDoc + '\'' +
+                ", especialidad='" + especialidad + '\'' +
+                ", gradoAcademico='" + gradoAcademico + '\'' +
+                ", correoElectronico='" + correoElectronico + '\'' +
+                '}';
+    }
 }
